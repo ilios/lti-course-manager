@@ -4,7 +4,12 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
-    // Add options here
+    fingerprint: {
+      exclude: ['ilios-icon.png']
+    },
+    'ember-cli-babel': {
+      includePolyfill: true
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated
