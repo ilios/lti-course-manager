@@ -90,12 +90,6 @@
   "engines": {
     "node": "6.* || 8.* || >= 10.*"
   },
-  "ember-addon": {
-    "paths": [
-      "lib/ilios-error",
-      "lib/ilios-loading"
-    ]
-  },
   "greenkeeper": {
     "ignore": [
       "ember-cli-babel",
