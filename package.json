@@ -1,7 +1,6 @@
 {
   "name": "lti-course-manager",
   "version": "0.0.0",
-  "private": true,
   "description": "Small description for lti-course-manager goes here",
   "license": "MIT",
   "author": "",
@@ -12,10 +11,10 @@
   "repository": "",
   "scripts": {
     "build": "ember build",
+    "lint:hbs": "ember-template-lint app/templates",
     "lint:js": "eslint .",
     "start": "ember serve",
-    "test": "ember test",
-    "lint:style": "stylelint app/styles"
+    "test": "ember test"
   },
   "devDependencies": {
     "@ember/jquery": "^0.5.2",
@@ -25,7 +24,6 @@
     "broccoli-merge-trees": "^3.0.1",
     "browserslist": "^4.0.0",
     "caniuse-db": "^1.0.30000893",
-    "broccoli-asset-rev": "^2.7.0",
     "ember-ajax": "^3.1.0",
     "ember-auto-import": "^1.2.13",
     "ember-chrome-devtools": "^0.2.0",
@@ -46,10 +44,6 @@
     "ember-cli-htmlbars-inline-precompile": "^1.0.3",
     "ember-cli-image-transformer": "^2.0.0",
     "ember-cli-inject-live-reload": "^1.8.2",
-    "ember-cli-htmlbars": "^2.0.1",
-    "ember-cli-htmlbars-inline-precompile": "^1.0.0",
-    "ember-cli-image-transformer": "^2.0.0",
-    "ember-cli-inject-live-reload": "^1.8.2",
     "ember-cli-new-version": "^1.3.0",
     "ember-cli-page-object": "1.15.0-beta.3",
     "ember-cli-sass": "8.0.1",
@@ -59,7 +53,6 @@
     "ember-click-outside": "^1.0.0",
     "ember-composable-helpers": "^2.0.2",
     "ember-data": "3.5.0",
-
     "ember-export-application-global": "^2.0.0",
     "ember-froala-editor": "^2.8.5",
     "ember-inflector": "^3.0.0",
@@ -81,8 +74,6 @@
     "ember-truth-helpers": "^2.0.0",
     "ember-uploader": "2.0.0",
     "ember-web-app": "^2.2.0",
-    "eslint-plugin-ember": "^5.0.0",
-    "ilios-common": "20.3.2",
     "eslint": "^4.19.1",
     "eslint-plugin-ember": "^5.2.0",
     "ilios-common": "20.3.2",
@@ -128,7 +119,6 @@
   },
   "pre-commit": [
     "lint:hbs",
-    "lint:style",
     "lint:js"
   ],
   "private": true
