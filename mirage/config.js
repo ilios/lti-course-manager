@@ -1,6 +1,6 @@
 import moment from 'moment';
 import Mirage from 'ember-cli-mirage';
-import ENV from 'ilios/config/environment';
+import ENV from 'lti-course-manager/config/environment';
 
 const { apiVersion } = ENV.APP;
 
