@@ -10,6 +10,11 @@ module.exports = function(defaults) {
     'ember-cli-babel': {
       includePolyfill: true
     },
+    'ember-froala-editor': {
+      languages: ['fr','es'],
+      plugins: ['lists', 'code_view', 'link'],
+      themes: 'gray'
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated
