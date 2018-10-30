@@ -24,6 +24,7 @@
     "broccoli-merge-trees": "^3.0.1",
     "browserslist": "^4.0.0",
     "caniuse-db": "^1.0.30000893",
+    "ember-a11y": "^0.1.17",
     "ember-ajax": "^3.1.0",
     "ember-auto-import": "^1.2.13",
     "ember-chrome-devtools": "^0.2.0",
