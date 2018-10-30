@@ -52,7 +52,8 @@ Router.map(function() {
   });
   this.route('course-visualize-instructor', {
     path: 'data/courses/:course_id/instructors/:user_id'
-  });this.route('login');
+  });
+  this.route('login', { path: 'login/:token'});
   this.route('login-error');
 });
 
