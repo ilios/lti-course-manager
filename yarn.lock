@@ -4598,6 +4598,18 @@ elliptic@^6.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.0"
 
+ember-a11y@^0.1.17:
+  version "0.1.17"
+  resolved "https://registry.yarnpkg.com/ember-a11y/-/ember-a11y-0.1.17.tgz#dc50aa302f2aa044411d00bc0574ea3e87c25647"
+  integrity sha512-5EHfoCTOmvKWgHCmFU97iPpy1fB8dLI45zmngGU4T+ntw6AxK1ZTk/TAofPlTidoZQkfQsBbz5VQjiX6R7m8zw==
+  dependencies:
+    broccoli-funnel "^2.0.1"
+    broccoli-merge-trees "^3.0.1"
+    broccoli-string-replace "^0.1.2"
+    ember-cli-babel "^6.6.0"
+    ember-cli-version-checker "^2.1.2"
+    ember-getowner-polyfill "^2.2.0"
+
 ember-ajax@^3.1.0:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/ember-ajax/-/ember-ajax-3.1.2.tgz#32e4c906835ea74aa5a8a24d9abf5b1576fd70aa"
