@@ -13,7 +13,7 @@ export default Route.extend({
     const apiHost = tokenData.apiHost;
     const apiNameSpace = tokenData.apiNameSpace;
 
-    if (audience !== 'ilios-lti-app' || !apiHost || !apiNameSpace) {
+    if (audience !== 'ilios-lti-course-manager' || !apiHost || !apiNameSpace) {
       /*eslint no-console: 0*/
       console.log('Unable to authenticate user');
       console.log(tokenData);
