@@ -21,6 +21,12 @@ module.exports = function(environment) {
     i18n: {
       defaultLocale: 'en'
     },
+    'ember-a11y-testing': {
+      componentOptions: {
+        turnAuditOff: process.env.SKIP_A11Y || false,
+        visualNoiseLevel: 1,
+      },
+    },
     fontawesome: {
       enableExperimentalBuildTimeTransform: false,
       defaultPrefix: 'fas',
