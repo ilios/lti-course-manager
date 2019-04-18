@@ -21,6 +21,12 @@ module.exports = function(environment) {
     i18n: {
       defaultLocale: 'en'
     },
+    'ember-a11y-testing': {
+      componentOptions: {
+        turnAuditOff: process.env.SKIP_A11Y || false,
+        visualNoiseLevel: 1,
+      },
+    },
     fontawesome: {
       enableExperimentalBuildTimeTransform: false,
       defaultPrefix: 'fas',
@@ -74,8 +80,10 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       },
       EXTEND_PROTOTYPES: {
-        // Prevent Ember Data from overriding Date.parse.
-        Date: false
+        String: true,
+        Array: true,
+        Function: false,
+        Date: false,
       }
     },
 
