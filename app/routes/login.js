@@ -13,6 +13,14 @@ export default Route.extend({
     const apiHost = tokenData.apiHost;
     const apiNameSpace = tokenData.apiNameSpace;
 
+    let queryParams = {};
+    if (window.location.search.length > 1) {
+      window.location.search.substr(1).split('&').forEach(str => {
+        let arr = str.split('=');
+        queryParams[arr[0]] = arr[1];
+      });
+    }
+
     if (audience !== 'ilios-lti-app' || !apiHost || !apiNameSpace) {
       /*eslint no-console: 0*/
       console.log('Unable to authenticate user');
@@ -29,7 +37,7 @@ export default Route.extend({
     session.set('data.apiHost', apiHost);
     session.set('data.apiNameSpace', apiNameSpace);
 
-    this.transitionTo('index');
+    this.transitionTo(`/courses/${queryParams.course_id}`);
   },
   async getNewToken(ltiToken, apiHost) {
     const apiHostWithNoTrailingSlash = apiHost.replace(/\/+$/, "");
