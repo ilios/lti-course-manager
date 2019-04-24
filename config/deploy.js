@@ -13,28 +13,24 @@ module.exports = function(deployTarget) {
       activateOnDeploy: true
     },
     s3: {
-      accessKeyId: process.env.AWS_KEY,
-      secretAccessKey: process.env.AWS_SECRET,
-      filePattern: '*'
+      acl: 'public-read',
+      filePattern: '*',
+      region: 'us-west-2',
     },
     cloudfront: {
-      accessKeyId: process.env.AWS_KEY,
-      secretAccessKey: process.env.AWS_SECRET
-    }
+    },
   };
 
   if (deployTarget === 'staging') {
     ENV.build.environment = 'production';
-    ENV.s3.bucket = process.env.STAGING_BUCKET;
-    ENV.s3.region = process.env.STAGING_REGION;
-    ENV.cloudfront.distribution = process.env.STAGING_DISTRIBUTION;
+    ENV.s3.bucket = 'ilios-lti-course-manager-app-dev';
+    ENV.cloudfront.distribution = 'E1PYN6FF9VZBIJ';
   }
 
   if (deployTarget === 'production') {
     ENV.build.environment = 'production';
-    ENV.s3.bucket = process.env.PRODUCTION_BUCKET;
-    ENV.s3.region = process.env.PRODUCTION_REGION;
-    ENV.cloudfront.distribution = process.env.PRODUCTION_DISTRIBUTION;
+    ENV.s3.bucket = 'ilios-lti-course-manager-app-prod';
+    ENV.cloudfront.distribution = 'E196RJPG6UDWJ1';
   }
 
   // Note: if you need to build some configuration asynchronously, you can return
