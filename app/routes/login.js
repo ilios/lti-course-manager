@@ -1,6 +1,7 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 import jwtDecode from '../utils/jwt-decode';
+import { set } from '@ember/object';
 
 import fetch from 'fetch';
 
@@ -31,11 +32,10 @@ export default Route.extend({
     }
     const jwt = await this.getNewToken(token, apiHost);
 
-    const session = this.get('session');
     let authenticator = 'authenticator:ilios-jwt';
-    session.authenticate(authenticator, {jwt});
-    session.set('data.apiHost', apiHost);
-    session.set('data.apiNameSpace', apiNameSpace);
+    this.session.authenticate(authenticator, {jwt});
+    set(this.session, 'data.apiHost', apiHost);
+    set(this.session, 'data.apiNameSpace', apiNameSpace);
 
     this.transitionTo(`/courses/${queryParams.course_id}`);
   },
