@@ -6,7 +6,7 @@ module.exports = function(defaults) {
   let env = EmberApp.env() || 'development';
   let isProductionLikeBuild = ['production', 'staging', 'preview'].indexOf(env) > -1;
 
-  
+
   let app = new EmberApp(defaults, {
     fingerprint: {
       exclude: ['ilios-icon.png']

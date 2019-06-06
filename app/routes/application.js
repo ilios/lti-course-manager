@@ -10,7 +10,7 @@ export default Route.extend(ApplicationRouteMixin, {
   beforeModel() {
     const intl = this.intl;
     const moment = this.moment;
-    const locale = intl.get('locale');
+    const locale = intl.locale;
     moment.setLocale(locale);
     window.document.querySelector('html').setAttribute('lang', locale);
   },
@@ -21,9 +21,9 @@ export default Route.extend(ApplicationRouteMixin, {
    */
   async afterModel() {
     const currentUser = this.currentUser;
-    const user = await currentUser.get('model');
+    const user = await currentUser.model;
     if (user) {
-      await user.get('roles');
+      await user.roles;
     }
   },
 });
