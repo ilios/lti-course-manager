@@ -1,6 +1,7 @@
 ---
 language: node_js
 node_js: 'lts/*'
+
 sudo: false
 dist: trusty
 
@@ -15,12 +16,6 @@ env:
   global:
     # See https://git.io/vdao3 for details.
     - JOBS=1
-
-before_install:
-- npm config set spin false
-
-install:
-- npm install --no-interactive
 
 script:
   - npm run lint:style
