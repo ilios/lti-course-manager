@@ -1,7 +1,5 @@
 # LTI Course Manager
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/ilios/lti-course-manager.svg)](https://greenkeeper.io/)
-
 Learning Tools Interoperability (LTI) application for the Ilios course manager.
 
 ## Prerequisites
