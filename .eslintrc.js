@@ -5,6 +5,9 @@ module.exports = {
   ],
   rules: {
     'ember/routes-segments-snake-case': 0,
+    "node/no-extraneous-require": ["error", {
+        "allowModules": ["postcss-scss"]
+    }],
     'sort-imports': 0,
-  },
+  }
 };
