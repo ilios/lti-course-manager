@@ -12,8 +12,8 @@ Router.map(function() {
     resetNamespace: true
   }, function(){
     this.route('publication_check', { path: '/publicationcheck'});
-    this.route('publishall' );
-    this.route('rollover' );
+    this.route('publishall');
+    this.route('rollover');
     this.route("session", {
       path: '/sessions/:session_id',
       resetNamespace: true
