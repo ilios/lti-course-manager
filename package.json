@@ -65,7 +65,7 @@
     "ember-qunit-nice-errors": "^1.2.0",
     "ember-resolver": "^5.1.2",
     "ember-source": "~3.11.1",
-    "ember-template-lint": "^1.6.2",
+    "ember-template-lint": "^1.7.0",
     "ember-test-selectors": "^2.1.0",
     "ember-truth-helpers": "^2.0.0",
     "ember-uploader": "2.0.0",
