@@ -5,7 +5,7 @@ module('Unit | Route | course-visualize-instructor', function(hooks) {
   setupTest(hooks);
 
   test('it exists', function(assert) {
-    let route = this.owner.lookup('route:course-visualize-instructor');
+    const route = this.owner.lookup('route:course-visualize-instructor');
     assert.ok(route);
   });
 });

@@ -14,10 +14,10 @@ export default Route.extend({
     const apiHost = tokenData.apiHost;
     const apiNameSpace = tokenData.apiNameSpace;
 
-    let queryParams = {};
+    const queryParams = {};
     if (window.location.search.length > 1) {
       window.location.search.substr(1).split('&').forEach(str => {
-        let arr = str.split('=');
+        const arr = str.split('=');
         queryParams[arr[0]] = arr[1];
       });
     }
@@ -32,7 +32,7 @@ export default Route.extend({
     }
     const jwt = await this.getNewToken(token, apiHost);
 
-    let authenticator = 'authenticator:ilios-jwt';
+    const authenticator = 'authenticator:ilios-jwt';
     this.session.authenticate(authenticator, {jwt});
     set(this.session, 'data.apiHost', apiHost);
     set(this.session, 'data.apiNameSpace', apiNameSpace);

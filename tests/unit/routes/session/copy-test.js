@@ -5,7 +5,7 @@ module('Unit | Route | session/copy', function(hooks) {
   setupTest(hooks);
 
   test('it exists', function(assert) {
-    let route = this.owner.lookup('route:session/copy');
+    const route = this.owner.lookup('route:session/copy');
     assert.ok(route);
   });
 });

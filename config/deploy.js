@@ -2,7 +2,7 @@
 'use strict';
 
 module.exports = function(deployTarget) {
-  let ENV = {
+  const ENV = {
     build: {},
     pipeline: {
       // This setting runs the ember-cli-deploy activation hooks on every deploy
