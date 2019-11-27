@@ -3,13 +3,14 @@
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
-  let env = EmberApp.env() || 'development';
-  let isProductionLikeBuild = ['production', 'staging', 'preview'].indexOf(env) > -1;
+  const env = EmberApp.env() || 'development';
+  const isProductionLikeBuild = ['production', 'staging', 'preview'].indexOf(env) > -1;
+  const isTestBuild = env === 'test';
 
-
-  let app = new EmberApp(defaults, {
+  const app = new EmberApp(defaults, {
     fingerprint: {
-      exclude: ['ilios-icon.png']
+      exclude: ['ilios-icon.png'],
+      enabled: isProductionLikeBuild,
     },
     sourcemaps: {
       enabled: true,
@@ -18,17 +19,9 @@ module.exports = function(defaults) {
     minifyJS: { enabled: isProductionLikeBuild },
 
     tests: env.EMBER_CLI_TEST_COMMAND || !isProductionLikeBuild,
-    hinting: env.EMBER_CLI_TEST_COMMAND || !isProductionLikeBuild,
+    hinting: isTestBuild,
     babel: {
       plugins: [ require('ember-auto-import/babel-plugin') ]
-    },
-    'ember-cli-babel': {
-      includePolyfill: true
-    },
-    'ember-froala-editor': {
-      languages: ['fr','es'],
-      plugins: ['lists', 'code_view', 'link'],
-      themes: 'gray'
     },
     postcssOptions: {
       compile: {
@@ -52,6 +45,9 @@ module.exports = function(defaults) {
     },
     autoImport: {
       publicAssetURL: '/assets'
+    },
+    'ember-fetch': {
+      preferNative: true
     },
   });
 

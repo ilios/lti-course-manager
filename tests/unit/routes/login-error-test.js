@@ -5,7 +5,7 @@ module('Unit | Route | login-error', function(hooks) {
   setupTest(hooks);
 
   test('it exists', function(assert) {
-    let route = this.owner.lookup('route:login-error');
+    const route = this.owner.lookup('route:login-error');
     assert.ok(route);
   });
 });

@@ -5,7 +5,7 @@ module('Unit | Route | course-visualize-vocabularies', function(hooks) {
   setupTest(hooks);
 
   test('it exists', function(assert) {
-    let route = this.owner.lookup('route:course-visualize-vocabularies');
+    const route = this.owner.lookup('route:course-visualize-vocabularies');
     assert.ok(route);
   });
 });

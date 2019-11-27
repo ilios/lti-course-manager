@@ -5,7 +5,7 @@ module('Unit | Route | course-visualize-session-types', function(hooks) {
   setupTest(hooks);
 
   test('it exists', function(assert) {
-    let route = this.owner.lookup('route:course-visualize-session-types');
+    const route = this.owner.lookup('route:course-visualize-session-types');
     assert.ok(route);
   });
 });
