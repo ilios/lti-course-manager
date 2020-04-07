@@ -10,7 +10,7 @@ module.exports = {
     'no-html-comments': true,
     'no-nested-interactive': true,
     'self-closing-void-elements': true,
-    'img-alt-attributes': false,
+    'require-valid-alt-text': false,
     'no-invalid-interactive': false,
     'inline-link-to': true,
     'no-triple-curlies': false,
