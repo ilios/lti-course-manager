@@ -70,7 +70,7 @@
     "ember-uploader": "2.0.0",
     "ember-web-app": "^4.0.0",
     "eslint": "^7.3.1",
-    "ilios-common": "^43.1.1",
+    "ilios-common": "^44.0.0",
     "loader.js": "^4.7.0",
     "normalize.css": "^8.0.0",
     "postcss-scss": "^2.1.1",
