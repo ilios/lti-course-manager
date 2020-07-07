@@ -69,7 +69,7 @@
     "ember-truth-helpers": "^2.0.0",
     "ember-uploader": "2.0.0",
     "ember-web-app": "^4.0.0",
-    "eslint": "^7.3.1",
+    "eslint": "^7.4.0",
     "ilios-common": "^44.0.0",
     "loader.js": "^4.7.0",
     "normalize.css": "^8.0.0",
