@@ -66,7 +66,7 @@
     "ember-uploader": "2.0.0",
     "ember-web-app": "^5.0.1",
     "eslint": "^7.12.1",
-    "ilios-common": "^52.0.0",
+    "ilios-common": "^52.0.1",
     "loader.js": "^4.7.0",
     "normalize.css": "^8.0.0",
     "postcss-scss": "^3.0.1",
