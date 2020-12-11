@@ -75,7 +75,7 @@
     "stylelint": "^13.8.0",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-scss": "^3.17.2",
-    "validator": "^13.5.1"
+    "validator": "^13.5.2"
   },
   "engines": {
     "node": ">= 10.*"
