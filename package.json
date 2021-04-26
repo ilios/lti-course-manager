@@ -80,7 +80,7 @@
     "stylelint": "^13.13.0",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-scss": "^3.19.0",
-    "validator": "^13.5.2"
+    "validator": "^13.6.0"
   },
   "engines": {
     "node": "10.* || >= 12"
