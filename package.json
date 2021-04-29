@@ -54,7 +54,7 @@
     "ember-cli-postcss": "^6.0.1",
     "ember-cli-server-variables": "2.4.0",
     "ember-cli-sri": "^2.1.1",
-    "ember-cli-terser": "^4.0.1",
+    "ember-cli-terser": "^4.0.2",
     "ember-export-application-global": "^2.0.1",
     "ember-inflector": "^3.0.1",
     "ember-link-action": "^2.0.3",
