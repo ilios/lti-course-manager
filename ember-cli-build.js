@@ -2,7 +2,7 @@
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-module.exports = function(defaults) {
+module.exports = function (defaults) {
   const env = EmberApp.env() || 'development';
   const isProductionLikeBuild = ['production', 'staging', 'preview'].indexOf(env) > -1;
   const isTestBuild = env === 'test';
@@ -21,7 +21,7 @@ module.exports = function(defaults) {
     tests: env.EMBER_CLI_TEST_COMMAND || !isProductionLikeBuild,
     hinting: isTestBuild,
     babel: {
-      plugins: [ require('ember-auto-import/babel-plugin') ]
+      plugins: [require('ember-auto-import/babel-plugin')],
     },
     postcssOptions: {
       compile: {
@@ -32,22 +32,22 @@ module.exports = function(defaults) {
           {
             module: require('@csstools/postcss-sass'),
           },
-        ]
+        ],
       },
       filter: {
         enabled: true,
         plugins: [
           {
             module: require('autoprefixer'),
-          }
-        ]
-      }
+          },
+        ],
+      },
     },
     autoImport: {
-      publicAssetURL: '/assets'
+      publicAssetURL: '/assets',
     },
     'ember-fetch': {
-      preferNative: true
+      preferNative: true,
     },
   });
 
