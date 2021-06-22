@@ -1,7 +1,7 @@
 /* eslint-env node */
 'use strict';
 
-module.exports = function(deployTarget) {
+module.exports = function (deployTarget) {
   const ENV = {
     build: {},
     pipeline: {
@@ -10,15 +10,14 @@ module.exports = function(deployTarget) {
       // To disable CloudFront invalidation, remove this setting or change it to `false`.
       // To disable ember-cli-deploy-cloudfront for only a particular environment, add
       // `ENV.pipeline.activateOnDeploy = false` to an environment conditional below.
-      activateOnDeploy: true
+      activateOnDeploy: true,
     },
     s3: {
       acl: 'public-read',
       filePattern: '*',
       region: 'us-west-2',
     },
-    cloudfront: {
-    },
+    cloudfront: {},
   };
 
   if (deployTarget === 'staging') {

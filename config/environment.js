@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   const ENV = {
     modulePrefix: 'lti-course-manager',
     environment,
@@ -16,10 +16,10 @@ module.exports = function(environment) {
       tokenPropertyName: 'jwt',
       authorizationHeaderName: 'X-JWT-Authorization',
       authorizationPrefix: 'Token ',
-      refreshLeeway: 300
+      refreshLeeway: 300,
     },
     i18n: {
-      defaultLocale: 'en'
+      defaultLocale: 'en',
     },
     'ember-a11y-testing': {
       componentOptions: {
@@ -42,13 +42,13 @@ module.exports = function(environment) {
         Array: true,
         Function: false,
         Date: false,
-      }
+      },
     },
 
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
   };
 
   if (environment === 'development') {
@@ -59,7 +59,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     //Remove mirage in development, we only use it in testing
     ENV['ember-cli-mirage'] = {
-      enabled: false
+      enabled: false,
     };
   }
 
