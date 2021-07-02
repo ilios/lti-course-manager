@@ -2,7 +2,7 @@ name: Dependabot auto-merge
 on: pull_request_target
 permissions:
   pull-requests: write
-  content: write
+  contents: write
 jobs:
   dependabot:
     runs-on: ubuntu-latest
@@ -16,7 +16,7 @@ jobs:
         - "ember-a11y-testing"
         - "ember-cli-dependency-checker"
         - "ember-cli-dependency-lint"
-        - "ember-cli-deprecation-workflow""
+        - "ember-cli-deprecation-workflow"
         - "ember-noscript"
         - "ember-qunit"
         - "ember-qunit-nice-errors"
