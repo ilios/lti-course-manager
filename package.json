@@ -91,7 +91,7 @@
     "stylelint": "^13.13.0",
     "stylelint-config-recommended-scss": "^4.3.0",
     "stylelint-scss": "^3.21.0",
-    "validator": "^13.5.2"
+    "validator": "^13.7.0"
   },
   "engines": {
     "node": "10.* || >= 12"
