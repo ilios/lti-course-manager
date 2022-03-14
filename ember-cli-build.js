@@ -1,6 +1,7 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const broccoliAssetRevDefaults = require('broccoli-asset-rev/lib/default-options');
 
 module.exports = function (defaults) {
   const env = EmberApp.env() || 'development';
@@ -9,8 +10,9 @@ module.exports = function (defaults) {
 
   const app = new EmberApp(defaults, {
     fingerprint: {
-      exclude: ['ilios-icon.png'],
+      extensions: broccoliAssetRevDefaults.extensions.concat(['webmanifest', 'svg']),
       enabled: isProductionLikeBuild,
+      exclude: ['ilios-icon.png'],
     },
     sourcemaps: {
       enabled: true,
@@ -22,26 +24,6 @@ module.exports = function (defaults) {
     hinting: isTestBuild,
     babel: {
       plugins: [require('ember-auto-import/babel-plugin')],
-    },
-    postcssOptions: {
-      compile: {
-        extension: 'scss',
-        enabled: true,
-        parser: require('postcss-scss'),
-        plugins: [
-          {
-            module: require('@csstools/postcss-sass'),
-          },
-        ],
-      },
-      filter: {
-        enabled: true,
-        plugins: [
-          {
-            module: require('autoprefixer'),
-          },
-        ],
-      },
     },
     autoImport: {
       publicAssetURL: '/assets',
