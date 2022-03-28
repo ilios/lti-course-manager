@@ -5,9 +5,10 @@ import { set } from '@ember/object';
 
 import fetch from 'fetch';
 
-export default Route.extend({
-  serverVariables: service(),
-  session: service(),
+export default class ApplicationRoute extends Route {
+  @service serverVariables;
+  @service session;
+
   async model({ token }) {
     const tokenData = jwtDecode(token);
     const audience = tokenData.aud;
@@ -41,7 +42,8 @@ export default Route.extend({
     set(this.session, 'data.apiNameSpace', apiNameSpace);
 
     this.transitionTo(`/courses/${queryParams.course_id}`);
-  },
+  }
+
   async getNewToken(ltiToken, apiHost) {
     const apiHostWithNoTrailingSlash = apiHost.replace(/\/+$/, '');
     const url = `${apiHostWithNoTrailingSlash}/auth/token`;
@@ -56,5 +58,5 @@ export default Route.extend({
     } else {
       throw new Error('Unable to extract token from refresh request');
     }
-  },
-});
+  }
+}

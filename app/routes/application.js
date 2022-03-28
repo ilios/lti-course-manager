@@ -1,19 +1,18 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
-import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
+export default class ApplicationRoute extends Route {
+  @service intl;
+  @service moment;
+  @service currentUser;
+  @service session;
 
-export default Route.extend(ApplicationRouteMixin, {
-  intl: service(),
-  moment: service(),
-  currentUser: service(),
-
-  beforeModel() {
+  async beforeModel() {
+    await this.session.setup();
     const intl = this.intl;
     const moment = this.moment;
-    const locale = intl.locale;
-    moment.setLocale(locale);
-    window.document.querySelector('html').setAttribute('lang', locale);
-  },
+    moment.setLocale(intl.locale);
+    window.document.querySelector('html').setAttribute('lang', intl.locale);
+  }
 
   /**
    * Preload the user model and the users roles
@@ -21,9 +20,9 @@ export default Route.extend(ApplicationRouteMixin, {
    */
   async afterModel() {
     const currentUser = this.currentUser;
-    const user = await currentUser.model;
+    const user = await currentUser.getModel();
     if (user) {
       await user.roles;
     }
-  },
-});
+  }
+}

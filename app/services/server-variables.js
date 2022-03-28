@@ -1,6 +1,5 @@
 import Service from '@ember/service';
-import { inject } from '@ember/service';
-import { reads } from '@ember/object/computed';
+import { inject as service } from '@ember/service';
 
 /**
  * In the LTI app we pull server variables out of the session instead
@@ -8,8 +7,13 @@ import { reads } from '@ember/object/computed';
  * we can provide this proxy service instead
  * They are needed in the ilios-config service
  **/
-export default Service.extend({
-  session: inject(),
-  apiHost: reads('session.data.apiHost'),
-  apiNameSpace: reads('session.data.apiNameSpace'),
-});
+export default class ServerVariablesService extends Service {
+  @service session;
+
+  get apiHost() {
+    return this.session.data.apiHost;
+  }
+  get apiNameSpace() {
+    return this.session.data.apiNameSpace;
+  }
+}
