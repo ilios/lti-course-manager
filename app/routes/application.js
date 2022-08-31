@@ -1,5 +1,7 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
+import { loadPolyfills } from 'ilios-common/utils/load-polyfills';
+
 export default class ApplicationRoute extends Route {
   @service intl;
   @service moment;
@@ -8,10 +10,10 @@ export default class ApplicationRoute extends Route {
 
   async beforeModel() {
     await this.session.setup();
-    const intl = this.intl;
-    const moment = this.moment;
-    moment.setLocale(intl.locale);
-    window.document.querySelector('html').setAttribute('lang', intl.locale);
+    await loadPolyfills();
+    const locale = this.intl.get('primaryLocale');
+    this.moment.setLocale(locale);
+    window.document.querySelector('html').setAttribute('lang', locale);
   }
 
   /**
