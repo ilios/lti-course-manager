@@ -80,7 +80,7 @@
     "prettier": "^2.3.2",
     "qunit": "^2.16.0",
     "qunit-dom": "^1.6.0",
-    "sass": "^1.55.0",
+    "sass": "^1.56.2",
     "stylelint": "^14.13.0",
     "stylelint-config-recommended-scss": "^8.0.0",
     "stylelint-scss": "^4.1.0",
