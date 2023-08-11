@@ -1,6 +1,5 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
-import { loadPolyfills } from 'ilios-common/utils/load-polyfills';
 
 export default class ApplicationRoute extends Route {
   @service intl;
@@ -10,9 +9,10 @@ export default class ApplicationRoute extends Route {
 
   async beforeModel() {
     await this.session.setup();
-    await loadPolyfills();
-    const locale = this.intl.primaryLocale;
-    this.moment.setLocale(locale);
+    const intl = this.intl;
+    const moment = this.moment;
+    moment.setLocale(intl.locale[0]);
+    window.document.querySelector('html').setAttribute('lang', intl.locale);
   }
 
   /**
@@ -25,5 +25,10 @@ export default class ApplicationRoute extends Route {
     if (user) {
       await user.roles;
     }
+  }
+
+  async activate() {
+    //remove our loading animation once the application is loaded
+    document.getElementById('ilios-loading-indicator')?.remove();
   }
 }

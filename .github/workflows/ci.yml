@@ -30,7 +30,7 @@ jobs:
     - name: install dependencies
       run: npm ci
     - name: lint style
-      run: npm run lint:style
+      run: npm run lint:css
     - name: lint hbs
       run: npm run lint:hbs
     - name: lint js
