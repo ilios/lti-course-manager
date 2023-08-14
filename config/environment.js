@@ -5,10 +5,11 @@ module.exports = function (environment) {
     modulePrefix: 'lti-course-manager',
     environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'history',
     'ember-simple-auth': {
       authorizer: 'authorizer:token',
       authenticationRoute: 'login-error',
+      useSessionSetupMethod: true, //can be removed in ESA v5.x
     },
     'ember-simple-auth-token': {
       serverTokenEndpoint: '/auth/login',
@@ -38,7 +39,7 @@ module.exports = function (environment) {
         // e.g. 'with-controller': true
       },
       EXTEND_PROTOTYPES: {
-        String: true,
+        String: false,
         Array: true,
         Function: false,
         Date: false,
