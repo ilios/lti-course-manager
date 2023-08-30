@@ -3,8 +3,6 @@ import { inject as service } from '@ember/service';
 import jwtDecode from '../utils/jwt-decode';
 import { set } from '@ember/object';
 
-import fetch from 'fetch';
-
 export default class ApplicationRoute extends Route {
   @service serverVariables;
   @service session;
