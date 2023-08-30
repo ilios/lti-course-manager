@@ -23,9 +23,6 @@ module.exports = function (defaults) {
     autoImport: {
       publicAssetURL: '/assets',
     },
-    'ember-fetch': {
-      preferNative: true,
-    },
   });
 
   return app.toTree();
