@@ -10,39 +10,28 @@ jobs:
       matrix:
         safe-dependency:
         - "@ilios/ember-template-lint-plugin"
-        - "babel-eslint"
         - "browserslist"
         - "caniuse-db"
+        - "dotenv"
         - "ember-a11y-testing"
         - "ember-cli-dependency-checker"
         - "ember-cli-dependency-lint"
         - "ember-cli-deprecation-workflow"
+        - "ember-cli-page-object"
         - "ember-noscript"
-        - "ember-qunit"
-        - "ember-qunit-nice-errors"
-        - "ember-template-lint"
-        - "eslint"
-        - "eslint-config-prettier"
-        - "eslint-plugin-ember"
-        - "eslint-plugin-node"
-        - "eslint-plugin-prettier"
-        - "prettier"
-        - "qunit"
-        - "qunit-dom"
-        - "stylelint"
         - "stylelint-config-recommended-scss"
         - "stylelint-scss"
     if: ${{ github.actor == 'dependabot[bot]' }}
     steps:
       - name: Dependabot metadata
         id: metadata
-        uses: dependabot/fetch-metadata@v1.1.0
+        uses: dependabot/fetch-metadata@v1.6.0
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - uses: actions/checkout@v4
+        if: ${{contains(steps.metadata.outputs.dependency-names, matrix.safe-dependency)}}
       - name: Enable auto-merge for Dependabot PRs
         if: ${{contains(steps.metadata.outputs.dependency-names, matrix.safe-dependency)}}
-        uses: peter-evans/enable-pull-request-automerge@v1
-        with:
-          pull-request-number: ${{github.event.pull_request.number}}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          merge-method: merge
+        run: gh pr merge --merge --auto ${{ github.event.number }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

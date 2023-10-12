@@ -26,9 +26,9 @@ Router.map(function () {
         function () {
           this.route('publication_check', { path: '/publicationcheck' });
           this.route('copy');
-        }
+        },
       );
-    }
+    },
   );
   this.route('print_course', { path: 'course/:course_id/print' });
   this.route('course-materials', { path: 'courses/:course_id/materials' });
