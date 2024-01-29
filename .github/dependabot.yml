@@ -37,7 +37,6 @@ updates:
   - dependency-name: ember-resolver
   - dependency-name: ember-source
   - dependency-name: ember-template-lint
-  - dependency-name: ember-welcome-page
   - dependency-name: eslint
   - dependency-name: eslint-config-prettier
   - dependency-name: eslint-plugin-ember
@@ -56,4 +55,4 @@ updates:
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
-    interval: daily
+    interval: weekly
