@@ -16,7 +16,6 @@ jobs:
         - "ember-a11y-testing"
         - "ember-cli-dependency-checker"
         - "ember-cli-dependency-lint"
-        - "ember-cli-deprecation-workflow"
         - "ember-cli-page-object"
         - "ember-noscript"
         - "stylelint-config-recommended-scss"
