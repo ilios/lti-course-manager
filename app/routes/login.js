@@ -6,6 +6,7 @@ import { set } from '@ember/object';
 export default class ApplicationRoute extends Route {
   @service serverVariables;
   @service session;
+  @service router;
 
   async model({ token }) {
     const tokenData = jwtDecode(token);
@@ -29,7 +30,7 @@ export default class ApplicationRoute extends Route {
       console.log('Unable to authenticate user');
       console.log(tokenData);
 
-      this.transitionTo('login-error');
+      this.router.transitionTo('login-error');
       return;
     }
     const jwt = await this.getNewToken(token, apiHost);
@@ -39,7 +40,7 @@ export default class ApplicationRoute extends Route {
     set(this.session, 'data.apiHost', apiHost);
     set(this.session, 'data.apiNameSpace', apiNameSpace);
 
-    this.transitionTo(`/courses/${queryParams.course_id}`);
+    this.router.transitionTo(`/courses/${queryParams.course_id}`);
   }
 
   async getNewToken(ltiToken, apiHost) {
